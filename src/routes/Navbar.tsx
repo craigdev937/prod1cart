@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { Link, Outlet } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
 
 export const Navbar = () => {
     const [open, setOpen] = React.useState(false);
@@ -16,14 +17,17 @@ export const Navbar = () => {
     return (
         <React.Fragment>
             <nav className="navbar">
-                <Link to={"/"}>
-                    <h1>LOGO</h1>
+                <Link 
+                    to={"/"} 
+                    className="navbar__logo"
+                >
+                    Home
                 </Link>
                 <aside 
                     className="navbar__icon" 
                     onClick={handleClick}
                 >
-                    {open ? "X" : "CLOSE"}
+                    {open ? <FiX /> : <FiMenu />}
                 </aside>
                 <ul className={open ? 
                     "navbar__ul active" : 
@@ -41,7 +45,7 @@ export const Navbar = () => {
                         className="navbar__link"
                         onClick={closeMenu}
                     >
-                        Products                        
+                        Cart                        
                     </Link>
                 </ul>
             </nav>
