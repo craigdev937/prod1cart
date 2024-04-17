@@ -1,4 +1,5 @@
 import React from "react";
+import "./Products.css";
 import { ProdAPI } from "../global/ProdAPI";
 
 export const Products = () => {
@@ -21,13 +22,26 @@ export const Products = () => {
             {isLoading ? (
                 <h1>Loading...</h1>
             ) : (
-                <section>
+                <main className="products">
                     {data!.products.map((prod) => (
                         <aside key={prod.id}>
-                            <h1>{prod.title}</h1>
+                            <section className="card">
+                                <aside className="card__img">
+                                    <img
+                                        className="card__image"
+                                        alt={prod.title} 
+                                        src={prod.thumbnail} 
+                                    />
+                                </aside>
+                                <aside className="card__info">
+                                    <h3>{prod.title}</h3>
+                                    <p>{prod.description}</p>
+                                    <p>Price:  {prod.price}</p>
+                                </aside>
+                            </section>
                         </aside>
                     ))}
-                </section>
+                </main>
             )}
         </React.Fragment>
     );

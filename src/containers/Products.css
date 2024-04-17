@@ -1,0 +1,27 @@
+.products {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill, 
+        minmax(15em, 1fr)
+    );
+    grid-gap: 5em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+}
+
+.card__img {
+    align-items: center;
+    justify-content: center;
+}
+
+.card__image {
+    height: 8rem;
+    width: auto;
+}
+
+
